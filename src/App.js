@@ -17,9 +17,17 @@ function App() {
     setBooks(updatedBooks);
   };
 
+  const deleteBook = (id) => {
+    const remainingBooks = books.filter((book) => {
+      return book.id !== id;
+    });
+
+    setBooks(remainingBooks);
+  };
+
   return (
     <div className="app">
-      <BookList books={books} />
+      <BookList books={books} onDelete={deleteBook} />
       <BookCreate onCreate={createBook} />
     </div>
   );
