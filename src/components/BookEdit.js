@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import BooksContext from '../context/books';
 
 function BookEdit({ book, onSubmit }) {
+  const { editBook } = useContext(BooksContext);
   const [title, setTitle] = useState(book.title);
 
   const handleChange = (event) => {
@@ -10,7 +12,8 @@ function BookEdit({ book, onSubmit }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    onSubmit(book.id, title);
+    editBook(book.id, title);
+    onSubmit();
   };
 
   return (
