@@ -1,6 +1,6 @@
 # Modern React with Redux
 
-## Section 7: Data Persistence with API Requests
+## Section 8: Communication Using the Context
 
 ## Available Scripts
 
